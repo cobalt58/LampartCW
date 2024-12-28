@@ -1,0 +1,11 @@
+RewriteEngine on
+Header always set Referrer-Policy "same-origin"
+Header always append X-Frame-Options SAMEORIGIN
+
+RewriteRule ^public/(.*) public/$1 [L=302]
+RewriteRule ^products-images/(.*) products-images/$1 [L=302]
+RewriteRule ^users-avatars/(.*) users-avatars/$1 [L=302]
+RewriteRule (.*)/public/(.*) public/$2 [L=302]
+
+RewriteRule (.*) public/index.php [L]
+
